@@ -17,7 +17,7 @@ class MoviesController < ApplicationController
 
     def create
         params.require(:movie)
-        permitted = params[:movie].permit(:title,:rating,:release_date)
+        permitted = params[:movie].permit(:title,:rating,:release_date,:description)
         @movie = Movie.create!(permitted)
         flash[:notice] = "#{@movie.title} was successfully created."
         # redirect_to movies_path # redirect to the index action after a successful create
@@ -30,7 +30,7 @@ class MoviesController < ApplicationController
 
     def update
         @movie = Movie.find params[:id]
-        permitted = params[:movie].permit(:title,:rating,:release_date)
+        permitted = params[:movie].permit(:title,:rating,:release_date,:description)
         @movie.update!(permitted)
          
         flash[:notice] = "#{@movie.title} was successfully updated."

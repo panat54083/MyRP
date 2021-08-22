@@ -11,6 +11,10 @@
   = label :movie, :release_date, 'Released On'
   = date_select :movie, :release_date, start_year: 1930
 
+  = label :movie, :description, 'Description'
+  = text_field :movie, :description
+  
+  %h3
   = submit_tag 'Save Changes'
 %h3
 = link_to 'Cancel' , movies_path
