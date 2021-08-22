@@ -1,7 +1,7 @@
 # This file is app/controllers/movies_controller.rb
 class MoviesController < ApplicationController
     def index
-      @movies = Movie.order(:title)
+      @movies = Movie.all.sort_by { |name| name.title}
     end
 
     def show
