@@ -4,13 +4,15 @@
 %table#movies
   %thead
     %tr
+      %th Number
       %th Movie Title
       %th Rating
       %th Release Date
       %th More Info
   %tbody
-    - @movies.each do |movie|
+    - @movies.each.with_index(1) do |movie, index|
       %tr
+        %td= index
         %td= movie.title 
         %td= movie.rating
         %td= movie.release_date
