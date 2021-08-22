@@ -55,6 +55,15 @@ html, body {
     font-size: 2em;
     font-style: normal;
   }
+  h3#banner a{
+    color: maroon;
+    font-size: 200%;
+    margin-left: 20px;
+    text-decoration: none;
+  }
+  h3#banner a:hover{
+    border-bottom: 3px solid maroon;
+  }
   table#movies {
     margin: 10px;
     border-collapse: collapse;
