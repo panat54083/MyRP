@@ -1,14 +1,13 @@
 # This file is app/controllers/movies_controller.rb
 class MoviesController < ApplicationController
     def index
-      @movies = Movie.all
+      @movies = Movie.order(:title)
     end
 
     def show
         id = params[:id] # retrieve movie ID from URI route
         begin
             @movie = Movie.find(id) # look up movie by unique ID
-            
         rescue 
             flash[:notice] = "No movie with the given ID could be found."
             redirect_to movies_path
