@@ -6,7 +6,14 @@ class MoviesController < ApplicationController
 
     def show
         id = params[:id] # retrieve movie ID from URI route
-        @movie = Movie.find(id) # look up movie by unique ID
+        begin
+            @movie = Movie.find(id) # look up movie by unique ID
+            
+        rescue 
+            flash[:notice] = "No movie with the given ID could be found."
+            redirect_to movies_path
+        end
+        # @movie = Movie.find(id) # look up movie by unique ID
         # will render app/views/movies/show.html.haml by default
     end
 
