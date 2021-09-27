@@ -11,10 +11,6 @@
       %th More Info
   %tbody
     - @movies.each.with_index(1) do |movie, index|
-      %tr
-        %td= index
-        %td= movie.title 
-        %td= movie.rating
-        %td= movie.release_date
-        %td= link_to "More about #{movie.title}", movie_path(movie)
+      = render :partial=>'movie', :locals => {:movie => movie , :index => index} 
+      -# https://stackoverflow.com/questions/6672454/passing-parameters-to-partial-view
 = link_to 'Add new movie', new_movie_path

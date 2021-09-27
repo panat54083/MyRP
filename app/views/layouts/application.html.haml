@@ -7,6 +7,8 @@
     = csrf_meta_tags
 
   %body
+    %h1
+    = render :partial => 'login_form' 
     %h3#banner
       = link_to 'RottenPotatoes', movies_path
     - if flash[:notice]
@@ -15,3 +17,4 @@
       #warning.message= flash[:warning]
     #main
       = yield
+    
