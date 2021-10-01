@@ -1,7 +1,7 @@
 # README
 - touch .env
 - put this code
-
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 GOOGLE_CLIENT_ID=
 
 GOOGLE_CLIENT_SECRET=
