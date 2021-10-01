@@ -9,6 +9,7 @@
       %th Rating
       %th Release Date
       %th More Info
+      
   %tbody
     - @movies.each.with_index(1) do |movie, index|
       = render :partial=>'movie', :locals => {:movie => movie , :index => index} 

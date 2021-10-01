@@ -13,7 +13,9 @@
 %h3 Description:
 
 %p#description= @movie.description
-
+= link_to 'Add Review', new_movie_review_path(@movie)
+-# = link_to 'Add Review', new_movie_review_path(@movie.id)
+%div
 = link_to 'Edit info', edit_movie_path(@movie)
 %div
 = link_to 'Back to movie list', movies_path
