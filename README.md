@@ -1,4 +1,10 @@
 # README
+- touch .env
+- put this code
+  GOOGLE_CLIENT_ID=
+  GOOGLE_CLIENT_SECRET=
+  
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
