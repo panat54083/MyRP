@@ -13,6 +13,23 @@
 %h3 Description:
 
 %p#description= @movie.description
+
+%h3 Reviews:
+%table#review
+  %thead
+    %tr
+      %th Number
+      %th User
+      %th Review
+      %th Comment
+  %tbody
+    - @movie.reviews.each.with_index(1) do |r, index|
+      %tr
+        %td= index
+        %td= r.moviegoer.name
+        %td= r.potatoes
+        %td= r.comments
+        
 = link_to 'Add Review', new_movie_review_path(@movie)
 -# = link_to 'Add Review', new_movie_review_path(@movie.id)
 %div
