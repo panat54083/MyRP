@@ -3,5 +3,13 @@
 = form_tag movie_reviews_path(@movie) do
   %label How many potatoes:
   = select_tag 'review[potatoes]', options_for_select(1..5)
-  = submit_tag 'Create Review'
   
+
+  = label :review, :comments, 'Comments'
+  = text_area :review, :comments
+  %h3
+  = submit_tag 'Create Review'
+
+
+%div
+= link_to 'Cancel' , movie_path(@movie)

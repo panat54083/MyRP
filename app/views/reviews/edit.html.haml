@@ -1,0 +1,15 @@
+%h2 Edit Review
+
+= form_tag movie_review_path(@movie), :method => :put do
+
+    = label :review, :potatoes, 'Reviews'
+    = select :review, :potatoes, Review.all_ratings
+
+
+    = label :review, :comments, 'Comments'
+    = text_area :review, :comments
+
+    %h3
+    = submit_tag 'Save Changes'
+%h3
+= link_to 'Cancel' , movie_path(@movie)

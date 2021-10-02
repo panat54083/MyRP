@@ -24,17 +24,18 @@
       %th Comment
   %tbody
     - @movie.reviews.each.with_index(1) do |r, index|
-      %tr
-        %td= index
-        %td= r.moviegoer.name
-        %td= r.potatoes
-        %td= r.comments
-        
+      = render :partial=>'reviews/review', :locals => {:r => r , :index => index}
+
+
+%div
 = link_to 'Add Review', new_movie_review_path(@movie)
 -# = link_to 'Add Review', new_movie_review_path(@movie.id)
+
 %div
 = link_to 'Edit info', edit_movie_path(@movie)
+
 %div
 = link_to 'Back to movie list', movies_path
+
 %div
 = link_to 'Delete', movie_path(@movie), :method => :delete

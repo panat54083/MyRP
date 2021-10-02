@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
         redirect_to movies_path
       end
       # unless (@movie = Movie.where(:id => params[:movie_id]))
-      unless (@movie = Movie.find_by_id(params[:movie_id]))  
+      unless (@movie = Movie.find_by(params[:movie_id]))  
         flash[:warning] = 'Review must be for an existing movie.'
         redirect_to movies_path
       end
@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
       @current_user.reviews << @movie.reviews.build(review_params)
       redirect_to movie_path(@movie)
     end
-
+    
     private
 
     def review_params
