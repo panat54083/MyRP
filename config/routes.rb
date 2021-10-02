@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   get  'auth/failure' => 'sessions#failure'
   get  'auth/google_auth2', :as => 'login'
 
+  post '/movies/search_tmdb'
+  
 end
